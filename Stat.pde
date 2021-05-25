@@ -274,7 +274,7 @@ class Stat{
   
   void update(){
    
-   fill(farve,farve,255);
+   fill(255,farve,farve);
    rect(x,y,size,size);
    fill(0);
    textSize(size/8+10);

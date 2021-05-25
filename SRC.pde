@@ -5,13 +5,17 @@ ArrayList<Uge> uger = new ArrayList<Uge>();
 int ugeNu = 1;
 
 void setup(){
+surface.setResizable(true);
 size(1920,1000);
-data = loadTable("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv", "header");
-areal = loadTable("https://raw.githubusercontent.com/jakevdp/data-USstates/master/state-areas.csv", "header");
 
 rectMode(CENTER);
 textAlign(CENTER);
 
+clear();
+textSize(35);
+text("Loading",width/2,height/2);
+data = loadTable("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv", "header");
+areal = loadTable("https://raw.githubusercontent.com/jakevdp/data-USstates/master/state-areas.csv", "header");
 
 for(int Y = 2020; Y<=2021; Y++){
   for(int M = 1; M<=12; M++){
@@ -29,7 +33,7 @@ r.hentdata();
 }
 
 void draw(){
-background(230);
+background(150,200,255);
 
   if(uger.size() > 0)
   uger.get(ugeNu-1).update();
